@@ -31,7 +31,7 @@ pipeline {
         stage('docker-images') {
             steps {
                 echo 'build the six docker images (5 services + frontend)'
-                bat 'docker compose build'
+                bat 'docker-compose build'
                 bat 'docker images --filter "reference=bank-*"'
                 echo '===== docker images built ====='
             }
